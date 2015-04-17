@@ -6,10 +6,10 @@ function [ xn ] = newton_method( f, x0, h, steps )
 xn = x0;
 i = 0;
 while i < steps
-    v =  f(xn+h)-f(xn);
+    v =  double(f(xn+h))-double(f(xn));
     derivation = v/h;
-    xn = xn - f(xn)/derivation;
+    xn = xn - double(f(xn))/derivation;
     i=i+1;
-output = xn
+output = xn;
 end
 

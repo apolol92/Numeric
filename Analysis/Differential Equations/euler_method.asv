@@ -1,0 +1,15 @@
+function [ output ] = euler_method( starting_x, starting_y,...
+    gradient, h, steps)
+    xn = starting_x;
+    yn = starting_y;
+    points = [xn;yn];
+    i = 0;
+    while i < steps
+        yn = yn + h * double(gradient(xn, yn));
+        xn = xn + h;
+        i = i + 1;
+        points = cat(1,points,[xn;yn]);
+        
+    output = points;
+end
+
